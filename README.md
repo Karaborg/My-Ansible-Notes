@@ -5,7 +5,7 @@ Before we start, make sure you have **Docker** and **Docker Compose** installed 
 
 Once it's done. Check http://localhost:1000/. If your configurations are right, you should be able to see **Ansible Terminal** on tabs. Click on that, and connect to **Ubuntu-c**.
 
-> The user and password for containers is **ansible**/**password**.
+> The users and passwords for containers are **ansible**/**password** and **root**/**password**.
 
 Since we have 3 ubuntu and 3 centos os containers, we want to ssh them without entering password all the time. So:
 
@@ -17,6 +17,9 @@ Since we have 3 ubuntu and 3 centos os containers, we want to ssh them without e
 4. But, since we want to ssh with both **ansible** and **root** user, we can do all that with the script below:
 
 ```
+sudo apt update
+sudo apt install sshpass
+
 echo password > password.txt
 
 for user in ansible root
