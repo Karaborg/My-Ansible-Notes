@@ -10,9 +10,9 @@ Once it's done. Check http://localhost:1000/. If your configurations are right, 
 Since we have 3 ubuntu and 3 centos os containers, we want to ssh them without entering password all the time. So:
 
 1. Enter `ssh-keygen` to generate public and private key for ubuntu-c.
-   a. You can use default configurations.
+   1. You can use default configurations.
 2. Then we will copy our public key to other containers with `ssh-copy-id ansible@ubuntu1`.
-   a. **ansible** is your username and **ubuntu1** is your container name.
+   1. **ansible** is your username and **ubuntu1** is your container name.
 3. Once it's done, you can connect to `ubuntu1` container without password.
 4. But, since we want to ssh with both **ansible** and **root** user, we can do all that with the script below:
 
@@ -40,14 +40,14 @@ Now we can connect to all containers without a password.
 ### Ansible Configuration
 So, if we connect to our Ansible container which is **ubuntu-c**, and enter `ansible --version`, we can see there is no **config file** exist yet. To set this configuration file, there are 4 ways:
 
-1. **ANSIBLE_CONFIG** as environmental variable, with a filename target.
-   a. Create ansible.cfg file and use `export ANSIBLE_CONFIG=<PATH_TO_DIRECTORY>/ansible.cfg`
+1. **ANSIBLE_CONFIG** as environmental variable, with a filename target. 
+   1. Create ansible.cfg file and use `export ANSIBLE_CONFIG=<PATH_TO_DIRECTORY>/ansible.cfg`
 2. ./ansible.cfg in the current directory.
-   a. Create a directory, create a ansible.cfg file under that directory.
-   b. If you check the **config file** under that directory, ansible will use the closest ansible file.
+   1. Create a directory, create a ansible.cfg file under that directory.
+   2. If you check the **config file** under that directory, ansible will use the closest ansible file.
 3. ¬/.ansible.cfg file a hidden in the users home directory.
 4. /etc/ansible/ansible.cfg which is typically provided.
-   a. If you are using this type of configuration, it will be overwritten everytime when you use the other 3 ways.
+   1. If you are using this type of configuration, it will be overwritten everytime when you use the other 3 ways.
 
 > The list above listed as most **priority** to less.
 
