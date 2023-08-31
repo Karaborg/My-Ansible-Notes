@@ -48,7 +48,7 @@ So, if we connect to our Ansible container which is **ubuntu-c**, and enter `ans
 2. ./ansible.cfg in the current directory.
    1. Create a directory, create a ansible.cfg file under that directory.
    2. If you check the **config file** under that directory, ansible will use the closest ansible file.
-3. ¬/.ansible.cfg file a hidden in the users home directory.
+3. ~/.ansible.cfg file a hidden in the users home directory.
 4. /etc/ansible/ansible.cfg which is typically provided.
    1. If you are using this type of configuration, it will be overwritten everytime when you use the other 3 ways.
 
